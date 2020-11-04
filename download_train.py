@@ -13,9 +13,8 @@ def url_to_image(url):
     image = cv2.imdecode(image, cv2.IMREAD_UNCHANGED)
     return image
 
-# chain,hotel,im_source,im_id,im_url
+
 def download_and_resize(chain,hotel,im_source,im_id,im_url):
-    # print('Beginning downloads...')
     try:
         save_dir = os.path.join('./images/train/',chain,hotel,im_source)
         if not os.path.exists(save_dir):
@@ -49,17 +48,14 @@ def download_and_resize(chain,hotel,im_source,im_id,im_url):
 def main():
     hotel_f = open('./input/dataset/hotel_info.csv','r')
     hotel_reader = csv.reader(hotel_f)
-    # hotel_headers = next(hotel_reader,None)
     hotel_to_chain = {}
     for row in hotel_reader:
         hotel_to_chain[row[0]] = row[2]
  
     with open('./input/dataset/train_set.csv','r') as train_f:
         train_reader = csv.reader(train_f)
-        # skip n lines
-        # for i in range(100000): next(train_reader)
         pool = multiprocessing.Pool(processes=2*multiprocessing.cpu_count())
-        results = [pool.apply_async(download_and_resize, [ hotel_to_chain[hotel] , hotel , image_src, image_id, image_url ] )
+        results = [pool.apply_async(download_and_resize, [ hotel_to_chain[hotel], hotel, image_src, image_id, image_url] )
                                    for image_id, hotel, image_url, image_src, image_date in train_reader ]
         pool.close()
         pool.join()
