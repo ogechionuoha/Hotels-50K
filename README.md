@@ -137,3 +137,25 @@ To cite this work, please use:
   year = {2019}
 }
 ```
+
+## Docker
+To use docker run:
+```
+docker-compose up
+```
+
+Start and attach to the container then run
+
+```
+chmod u+x setup.sh
+./setup.sh
+```
+
+This downloads extracts the dataset, downloads and extracts the test images and downloads and extracts the pretrained model.
+
+Download the training set using the instructions above (python download_train.py) or a zipped version can be downloaded from https://gla-my.sharepoint.com/:u:/g/personal/ogechi_onuoha_glasgow_ac_uk/EYNTCuPuVgRGq494-cLXgK0B2tf3ovY5tNKJS4y0kSI38Q (64G). Extract this in the images folder then run the reproduce script.
+
+```
+chmod u+x reproduce.sh
+./reproduce.sh
+```
