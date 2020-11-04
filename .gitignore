@@ -2,3 +2,8 @@ input/test_set.json
 input/train_set.json
 images/*/*/*/*.jpg
 images/*/*/*.jpg
+*.tar
+*.tar.lz4
+input/dataset
+images/test
+images/train
