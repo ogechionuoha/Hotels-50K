@@ -2,11 +2,14 @@ from __future__ import print_function
 import tensorflow as tf
 from classfile import *
 import numpy as np
-import tensorflow.contrib.slim as slim
-from tensorflow.contrib.slim.nets import resnet_v2
+import tf_slim as slim
+from tf_slim.nets import resnet_v2
 import h5py
 import sys
 import glob
+
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior() 
 
 def save_h5(data_description,data,data_type,path):
     h5_feats=h5py.File(path,'w')
@@ -32,7 +35,7 @@ def main(pretrained_model):
     featLayer = 'resnet_v2_50/logits'
     feat = tf.squeeze(tf.nn.l2_normalize(layers[featLayer],3))
     c = tf.ConfigProto()
-    c.gpu_options.visible_device_list=str(3) # specify which gpu you want to run on
+    c.gpu_options.visible_device_list=str(0) # specify which gpu you want to run on
 
     sess = tf.Session(config=c)
     saver = tf.train.Saver()
