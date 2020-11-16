@@ -4,7 +4,7 @@ import os
 if __name__ == '__main__':
     print('Begin labelling...')
     hotel_country = {}
-    with open('./input/dataset/train_hotel_countries.csv', 'r') as hc:
+    with open('./input/train_hotel_countries.csv', 'r') as hc:
         hotel_countries = csv.reader(hc)
         for row in hotel_countries:
             hotel_country[row[0]] = row[1]

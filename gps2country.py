@@ -24,7 +24,7 @@ def get_country(lat, lon, language="en"):
 
 if __name__ == '__main__':
     print('Processing...')
-    hotelcountries = os.path.join('.','./input/dataset/train_hotel_countries.csv')
+    hotelcountries = os.path.join('.','./input/train_hotel_countries.csv')
     with open('./input/dataset/hotel_info.csv', 'r') as hotelfile, open(hotelcountries, 'a') as countries_csv:
         hotelscsv = csv.reader(hotelfile)
         header = hotelscsv.__next__()
