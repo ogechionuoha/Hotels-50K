@@ -11,7 +11,7 @@ TESTIMAGE_URL="https://cs.slu.edu/~stylianou/images/hotels-50k/test.tar.lz4"
 PRETRAINED_URL="https://www2.seas.gwu.edu/~astylianou/hotels50k/hotels50k_snapshot.tar.gz"
 
 #Extract dataset meta data to input directory.
-echo "Extracting dataset metadats..."
+echo "Extracting dataset metadata..."
 # Check if datasets directory exists
 if [ ! -d $DATASET_DIR ]; then
 	# wget -O $INPUT_VOL/dataset.tar.gz "$DATASETURL"

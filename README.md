@@ -153,9 +153,17 @@ chmod u+x setup.sh
 
 This extracts the dataset archive, downloads and extracts the test images and downloads and extracts the baseline pretrained model.
 
-Download the training set using the instructions above (python download_train.py) or a zipped version can be downloaded [here](https://gla-my.sharepoint.com/:u:/g/personal/ogechi_onuoha_glasgow_ac_uk/EYNTCuPuVgRGq494-cLXgK0B2tf3ovY5tNKJS4y0kSI38Q) (64G). Extract this to the images folder then run the reproduce script.
+Download the training set using the instructions above (python download_train.py) or a download zipped version which can be found [here](https://gla-my.sharepoint.com/:u:/g/personal/ogechi_onuoha_glasgow_ac_uk/EYNTCuPuVgRGq494-cLXgK0B2tf3ovY5tNKJS4y0kSI38Q) (64G). Extract this to the images folder then run the reproduce script.
 
 ```
 chmod u+x reproduce.sh
 ./reproduce.sh
+```
+
+##Generate Country labels
+Country labels for each hotel instance have been generated using gpstocountry.py
+
+To label for one country e.g uk not uk run 
+```
+python uk_notuk_labelgeneration.py
 ```

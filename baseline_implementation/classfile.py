@@ -33,6 +33,9 @@ class BatchAllSet:
 
         self.classes = {}
 
+        #image_id, hotel_id, image_url, image_source, upload_timestamp
+        #2587572,79733,https://traffickcam.com/images/2017/4/20160304_233556_NPCG8S.jpg,traffickcam,3/4/16 23:35
+
         for im in image_list:
             split_im = im.split('/')
             image_id = int(split_im[-1].split('.')[0])
