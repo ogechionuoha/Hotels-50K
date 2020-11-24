@@ -41,8 +41,8 @@ if __name__ == '__main__':
     #create folders for uk and not uk
     if not os.path.exists('./images/uk_us'):
         os.mkdir('./images/uk_us')
-        if not os.path.exists('./images/uk_us/test'):
-            os.mkdir('./images/uk_us/test')
+    if not os.path.exists('./images/uk_us/test'):
+        os.mkdir('./images/uk_us/test')
         #os.mkdir('./images/uk_not_uk/test')
 
     test_source_folder = './images/test/unoccluded'
