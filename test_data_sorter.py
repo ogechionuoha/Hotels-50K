@@ -43,7 +43,8 @@ if __name__ == '__main__':
         os.mkdir('./images/uk_us')
     if not os.path.exists('./images/uk_us/test'):
         os.mkdir('./images/uk_us/test')
-        #os.mkdir('./images/uk_not_uk/test')
+    if not os.path.exists('./images/uk_not_uk/test'):
+        os.mkdir('./images/uk_not_uk/test')
 
     test_source_folder = './images/test/unoccluded'
     #move UK images
