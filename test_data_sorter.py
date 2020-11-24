@@ -16,7 +16,6 @@ def copyfiles(csv_file, origin_folder, target_folder, countryname=None):
     #go through each image in uk.csv
     with open(csv_file, 'r') as csvfile:
         images = csv.reader(csvfile)
-        count = 0
         for row in images:
             if countryname==None or countryname==(row[-1]).strip():
                 #generate origin path??
@@ -27,11 +26,7 @@ def copyfiles(csv_file, origin_folder, target_folder, countryname=None):
                 #check if it exists in the origin but not in target, move
                 if os.path.isfile(origin) and not os.path.exists(target):
                     shutil.copyfile(origin, target)
-                    count += 1
-
-            if count >= 30000:
-                break
-
+                   
 
 if __name__ == '__main__':
 
