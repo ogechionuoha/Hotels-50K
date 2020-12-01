@@ -69,6 +69,6 @@ if __name__ == '__main__':
     notuk_train_csvfile = './input/uk_not_uk/train_not_uk.csv'
     train_notuk_folder = './images/dataset/train/not_uk'
     valid_notuk_folder = './images/dataset/valid/not_uk'
-    copyfiles(source_folder, uk_train_csvfile, train_notuk_folder, valid_notuk_folder)
+    copyfiles(source_folder, notuk_train_csvfile, train_notuk_folder, valid_notuk_folder)
     print('Finished!')
         
