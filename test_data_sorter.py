@@ -3,7 +3,7 @@ import os
 import csv
 
 
-def copyfiles(csv_file, origin_folder, target_folder, countryname=None):
+def copyfiles(origin_folder, csv_file,target_folder, countryname=None):
     """
     Move files listed in csv_file from origin folder to target folder
     """
@@ -39,39 +39,24 @@ if __name__ == '__main__':
             hotel_to_chain[row[0]] = row[2]
 
     #create folders for uk and not uk
-    if not os.path.exists('./images/uk_us'):
-        os.mkdir('./images/uk_us')
-    if not os.path.exists('./images/uk_us/test'):
-        os.mkdir('./images/uk_us/test')
-    if not os.path.exists('./images/uk_not_uk/test'):
-        os.mkdir('./images/uk_not_uk/test')
+    if not os.path.exists('./images/dataset/test'):
+        os.mkdir('./images/dataset/test')
+        os.mkdir('./images/dataset/test/not_uk')
+        os.mkdir('./images/dataset/test/uk')
 
     test_source_folder = './images/test/unoccluded'
+
     #move UK images
     print('Sorting UK images...')
     uk_test_csvfile = './input/uk_not_uk/test_uk.csv'
-    uk_test_target_folder = './images/uk_not_uk/test/uk'
-    copyfiles(uk_test_csvfile, test_source_folder, uk_test_target_folder)
+    test_uk_folder = './images/dataset/test/uk'
+    copyfiles(test_source_folder, uk_test_csvfile, test_uk_folder)
     print('Finished!')
         
     #move Not UK images 
     print('Sorting NOT UK images...')
     notuk_test_csvfile = './input/uk_not_uk/test_not_uk.csv'
-    notuk_test_target_folder = './images/uk_not_uk/test/us'
-    copyfiles(notuk_test_csvfile, test_source_folder, notuk_test_target_folder)
-    print('Finished!')
-
-    #move UK images
-    print('Sorting UK images...')
-    uk_test_csvfile = './input/uk_not_uk/test_uk.csv'
-    uk_test_target_folder = './images/uk_us/test/uk'
-    copyfiles(uk_test_csvfile, test_source_folder, uk_test_target_folder)
-    print('Finished!')
-        
-    #move Not UK images 
-    print('Sorting US images...')
-    notuk_test_csvfile = './input/uk_not_uk/test_not_uk.csv'
-    notuk_test_target_folder = './images/uk_us/test/us'
-    copyfiles(notuk_test_csvfile, test_source_folder, notuk_test_target_folder, 'United States of America')
+    test_notuk_folder = './images/dataset/test/not_uk'
+    copyfiles(test_source_folder, notuk_test_csvfile, test_notuk_folder)
     print('Finished!')
         
