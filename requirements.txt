@@ -2,3 +2,4 @@ opencv-python
 tensorflow-gpu>=1.5
 sklearn
 h5py
+geopy

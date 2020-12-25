@@ -44,24 +44,24 @@ if __name__ == '__main__':
             hotel_to_chain[row[0]] = row[2]
 
     #create folders for uk and not uk
-    if not os.path.exists('./images/uk_us'):
-        os.mkdir('./images/uk_us')
-        if not os.path.exists('./images/uk_us/train'):
-            os.mkdir('./images/uk_us/train')
+    if not os.path.exists('./images/uk_not_uk'):
+        os.mkdir('./images/uk_not_uk')
+    if not os.path.exists('./images/uk_not_uk/train'):
+        os.mkdir('./images/uk_not_uk/train')
         #os.mkdir('./images/uk_not_uk/test')
 
     train_source_folder = './images/train/'
     #move UK images
     print('Sorting UK images...')
     uk_train_csvfile = './input/uk_not_uk/train_uk.csv'
-    uk_train_target_folder = './images/uk_us/train/uk'
+    uk_train_target_folder = './images/uk_not_uk/train/uk'
     copyfiles(uk_train_csvfile, train_source_folder, uk_train_target_folder)
     print('Finished!')
         
     #move Not UK images 
     print('Sorting NOT UK images...')
     notuk_train_csvfile = './input/uk_not_uk/train_not_uk.csv'
-    notuk_train_target_folder = './images/uk_us/train/us'
+    notuk_train_target_folder = './images/uk_not_uk/train/not_uk'
     copyfiles(notuk_train_csvfile, train_source_folder, notuk_train_target_folder, 'United States of America')
     print('Finished!')
         
