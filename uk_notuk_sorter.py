@@ -64,4 +64,6 @@ if __name__ == '__main__':
     notuk_train_target_folder = './images/uk_not_uk/train/not_uk'
     copyfiles(notuk_train_csvfile, train_source_folder, notuk_train_target_folder, 'United States of America')
     print('Finished!')
+
+    
         
