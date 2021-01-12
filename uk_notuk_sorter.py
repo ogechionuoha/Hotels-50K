@@ -62,6 +62,6 @@ if __name__ == '__main__':
     print('Sorting NOT UK images...')
     notuk_train_csvfile = './input/uk_not_uk/train_not_uk.csv'
     notuk_train_target_folder = './images/uk_not_uk/train/not_uk'
-    copyfiles(notuk_train_csvfile, train_source_folder, notuk_train_target_folder, 'United States of America')
+    copyfiles(notuk_train_csvfile, train_source_folder, notuk_train_target_folder)
     print('Finished!')
         
